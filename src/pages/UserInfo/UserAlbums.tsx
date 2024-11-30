@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { ListGroup } from "react-bootstrap";
-import { Link, useParams } from "react-router-dom";
+import { Link, NavLink, useParams } from "react-router-dom";
 import { UserAlbumProps } from "../../components/interface/UserAlbumsProps";
 
 function UserAlbums() {
@@ -54,9 +54,9 @@ function UserAlbums() {
             <h2 className="title">User Albums</h2>
             <ListGroup>
                 {userAlbums.map(({ id, title }) => (
-                    <Link to={`/users/${userId}/albums/${id}`} key={id} className="list-item">
+                    <NavLink to={""} key={id} className="list-item">
                         <h3>{title}</h3>
-                    </Link>
+                    </NavLink>
                 ))}
             </ListGroup>
         </div>

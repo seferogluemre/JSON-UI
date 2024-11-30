@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { HomePage, ErrorPage, UserPage, RootPage, UserDetailPage, PostDetailPage } from './pages/index'
 import { usersLoader } from './pages/UsersPage/UsersPage';
 import { userLoader } from './pages/UserDetailPage/UserDetail';
-import { userPostDetailLoader } from './pages/PostDetail/PostDetails';
+import { postLoader } from './pages/PostDetail/PostDetails';
 
 const routes = createBrowserRouter([
   {
@@ -30,7 +30,7 @@ const routes = createBrowserRouter([
       {
         path: "users/:userId/posts/:postId",
         element: <PostDetailPage />,
-        loader: userPostDetailLoader,
+        loader: postLoader,
       },
 
 

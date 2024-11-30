@@ -15,7 +15,7 @@ function UserTab({ postLink, albumLink, todoLink }: UserTabProps) {
         <Tabs
             defaultActiveKey={postLink}
             id="uncontrolled-tab-example"
-            className="mb-3 tabs-link"
+            className="mb-3 tabs-link column-gap-5"
         >
             <Tab eventKey={postLink} title="post">
                 <UserPosts />

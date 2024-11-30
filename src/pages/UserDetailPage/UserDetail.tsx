@@ -16,11 +16,16 @@ export const userLoader = async ({ params }: LoaderFunctionArgs) => {
 function UserDetailPage() {
     const user = useLoaderData() as User;
 
-    console.log(user)
+    const URL_APİ = `https://randomuser.me/api/portraits/men/${user.id % 100}.jpg`
+
+
     return <>
         <Container>
             <Row>
                 <div className="col-xxl-4 col-lg-6 pt-5  col-md-12 col-sm-12">
+                    <div >
+                        <img width={80} height={80} className="img-fluid rounded-circle" src={URL_APİ} />
+                    </div>
                     <h2 className="user-info">{user.name}</h2>
                     <h2 className="user-info">{user.id}</h2>
                     <h2 className="user-info">{user.username}</h2>
