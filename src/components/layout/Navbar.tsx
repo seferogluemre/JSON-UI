@@ -16,7 +16,7 @@ export function NavbarComp() {
                         <Nav.Link to={`/`} as={NavLink} className="link">Anasayfa</Nav.Link>
                         <Nav.Link to={`/users`} as={NavLink} className="link">Users</Nav.Link>
                     </Nav>
-                    <Nav.Link as={NavLink} to={"favorites"}>Favori: {favorites.length}</Nav.Link>
+                    <Nav.Link as={NavLink} className="link" to={"favorites"}>Favori: {favorites.length}</Nav.Link>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
