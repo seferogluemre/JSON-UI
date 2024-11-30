@@ -10,31 +10,50 @@ interface UserAlbumProps {
     body: string;
 }
 
-const getUserAlbums = async (userId: string) => {
-    try {
-        const response = await axios.get(
-            `https://jsonplaceholder.typicode.com/users/${userId}/albums`
-        );
-        const posts: UserAlbumProps[] = response.data;
-        return posts;
-    } catch (error) {
-        console.error("Error fetching posts:", error);
-        return []; // Eğer hata alırsak boş bir dizi döndürelim
-    }
-};
-
 function UserAlbums() {
     const [userAlbums, setUserAlbums] = useState<UserAlbumProps[]>([]);
     const { userId } = useParams<{ userId: string }>();
+    const [loading, setLoading] = useState<boolean>(false);
+
+    const getUserAlbums = async (userId: string) => {
+        setLoading(true);
+        try {
+            const response = await axios.get(
+                `https://jsonplaceholder.typicode.com/users/${userId}/albums`
+            );
+            const posts: UserAlbumProps[] = response.data;
+            setLoading(false);
+            return posts;
+        } catch (error) {
+            console.error("Error fetching posts:", error);
+            return []; // Eğer hata alırsak boş bir dizi döndürelim
+        }
+    };
 
     useEffect(() => {
         const fetchUserAlbums = async () => {
-            if (!userId) return;
+            if (!userId) {
+                setLoading(true)
+                return
+            };
             const postsData = await getUserAlbums(userId);
             setUserAlbums(postsData);
         };
         fetchUserAlbums();
     }, [userId]);
+
+    if (loading) {
+        return (
+            <div className="loader-container">
+                <div className="bouncing-dots">
+                    <div className="dot"></div>
+                    <div className="dot"></div>
+                    <div className="dot"></div>
+                </div>
+            </div>
+        );
+    }
+
 
     return (
         <div>

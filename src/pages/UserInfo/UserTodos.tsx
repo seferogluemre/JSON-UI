@@ -11,31 +11,53 @@ interface UserTodoProps {
     completed: boolean;
 }
 
-const getUserTodos = async (userId: string) => {
-    try {
-        const response = await axios.get(
-            `https://jsonplaceholder.typicode.com/users/${userId}/todos`
-        );
-        const posts: UserTodoProps[] = response.data; // Direkt response.data kullanabilirsiniz
-        return posts;
-    } catch (error) {
-        console.error("Error fetching posts:", error);
-        return []; // Eğer hata alırsak boş bir dizi döndürelim
-    }
-};
+
 
 function UserAlbums() {
+
     const [userTodos, setUserTodos] = useState<UserTodoProps[]>([]);
     const { userId } = useParams<{ userId: string }>();
+    const [loading, setLoading] = useState<boolean>(false);
+
+    const getUserTodos = async (userId: string) => {
+        try {
+            const response = await axios.get(
+                `https://jsonplaceholder.typicode.com/users/${userId}/todos`
+            );
+            const posts: UserTodoProps[] = response.data; // Direkt response.data kullanabilirsiniz
+            setLoading(false);
+            return posts;
+        } catch (error) {
+            setLoading(true);
+            alert("Veriler yüklenirken hata oluştu")
+            console.error("Error fetching posts:", error);
+            return []; // Eğer hata alırsak boş bir dizi döndürelim
+        }
+    };
 
     useEffect(() => {
         const fetchUserTodos = async () => {
-            if (!userId) return;
+            if (!userId) {
+                setLoading(true);
+                return 0;
+            }
             const postsData = await getUserTodos(userId);
             setUserTodos(postsData);
         };
         fetchUserTodos();
     }, [userId]);
+
+    if (loading) {
+        return (
+            <div className="loader-container">
+                <div className="bouncing-dots">
+                    <div className="dot"></div>
+                    <div className="dot"></div>
+                    <div className="dot"></div>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div>

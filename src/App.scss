@@ -1,23 +1,33 @@
-*{
+* {
     font-family: "Montserrat", serif;
     font-weight: 600;
     user-select: none;
 }
-body{
+
+body {
     background-color: rgb(48, 48, 48) !important;
 }
-.homePage-info{
+
+.homePage-info {
     box-shadow: 0 6px 15px rgb(109, 109, 109);
     border-radius: 25px;
     padding: 30px 10px !important;
 }
-.user-info{
+
+.navbar {
+    .link {
+        color: white !important;
+    }
+}
+
+.user-info {
     font-size: 25px !important;
     font-weight: 600;
     padding: 5px;
     color: white;
 }
-.list-item{
+
+.list-item {
     box-shadow: 0 2px 4px rgb(255, 255, 255);
     margin: 10px 10px;
     border-radius: 8px;
@@ -30,15 +40,18 @@ body{
     text-decoration: none;
     padding: 10px;
 }
-.title{
+
+.title {
     color: white;
     text-align: center;
     font-size: 35px !important;
 }
-.usersCol{
+
+.usersCol {
     width: 30%;
     height: 30% !important;
-    .card{
+
+    .card {
         width: 100%;
         box-shadow: 0 1px 5px rgb(255, 255, 255);
         height: 140px;
@@ -49,9 +62,54 @@ body{
         cursor: pointer;
         transition: 0.2s ease-in-out;
 
-        &:hover{
+        &:hover {
             box-shadow: 0 1px 10px rgb(255, 255, 255);
             transform: scale(1.02);
         }
+    }
+}
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.bouncing-dots {
+    display: flex;
+    justify-content: space-between;
+    width: 60px;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    background-color: #ff5c35;
+    border-radius: 50%;
+    animation: bounce 1.5s infinite;
+}
+
+.dot:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
     }
 }
