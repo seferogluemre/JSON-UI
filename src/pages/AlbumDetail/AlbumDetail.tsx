@@ -88,7 +88,11 @@ function AlbumDetail() {
             </div>
 
         </Container>
-
+        <ToastNotification
+            message={toastMessage}
+            show={toastShow}
+            onClose={() => setToastShow(false)}
+        />
 
     </>
 }
