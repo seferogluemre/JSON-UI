@@ -13,7 +13,6 @@ export const userLoader = async ({ params }: LoaderFunctionArgs) => {
     }
 };
 
-
 function UserDetailPage() {
     const user = useLoaderData() as User;
 
@@ -21,19 +20,21 @@ function UserDetailPage() {
     return <>
         <Container>
             <Row>
-                <div className="col-xxl-6 col-lg-6 col-md-12 col-sm-12">
-                    <h4>{user.name}</h4>
-                    <h4>{user.id}</h4>
-                    <h4>{user.username}</h4>
-                    <h4>{user.email}</h4>
+                <div className="col-xxl-4 col-lg-6 pt-5  col-md-12 col-sm-12">
+                    <h2 className="user-info">{user.name}</h2>
+                    <h2 className="user-info">{user.id}</h2>
+                    <h2 className="user-info">{user.username}</h2>
+                    <h2 className="user-info">@ {user.email}</h2>
                 </div>
-                <UserTab
-                    {...{
-                        postLink: `/users/${user.id}/posts`,
-                        albumLink: `/users/${user.id}/albums`,
-                        todoLink: `/users/${user.id}/todos`,
-                    }}
-                />
+                <div className="col-lg-6 col-xxl-6 col-md-12 col-sm-12">
+                    <UserTab
+                        {...{
+                            postLink: `/users/${user.id}/posts`,
+                            albumLink: `/users/${user.id}/albums`,
+                            todoLink: `/users/${user.id}/todos`,
+                        }}
+                    />
+                </div>
             </Row>
         </Container>
     </>

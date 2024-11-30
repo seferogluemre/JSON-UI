@@ -1,27 +1,57 @@
 *{
-    font-size: 22px !important;
     font-family: "Montserrat", serif;
-    font-weight: 400;
+    font-weight: 600;
+    user-select: none;
+}
+body{
+    background-color: rgb(48, 48, 48) !important;
 }
 .homePage-info{
     box-shadow: 0 6px 15px rgb(109, 109, 109);
     border-radius: 25px;
     padding: 30px 10px !important;
-    
+}
+.user-info{
+    font-size: 25px !important;
+    font-weight: 600;
+    padding: 5px;
+    color: white;
 }
 .list-item{
-    border: none !important;
-    box-shadow: 0 2px 4px gray;
+    box-shadow: 0 2px 4px rgb(255, 255, 255);
     margin: 10px 10px;
     border-radius: 8px;
+    border: none !important;
+    outline: none;
     width: 700px;
+    background-color: darkcyan !important;
     cursor: pointer;
     color: black !important;
     text-decoration: none;
     padding: 10px;
 }
 .title{
-    color: red;
+    color: white;
     text-align: center;
     font-size: 35px !important;
+}
+.usersCol{
+    width: 30%;
+    height: 30% !important;
+    .card{
+        width: 100%;
+        box-shadow: 0 1px 5px rgb(255, 255, 255);
+        height: 140px;
+        background-color: rgb(86, 100, 110);
+        color: white;
+        border: none;
+        padding-top: 5px;
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+
+        &:hover{
+            box-shadow: 0 1px 10px rgb(255, 255, 255);
+            transform: scale(1.02);
+        }
+    }
 }

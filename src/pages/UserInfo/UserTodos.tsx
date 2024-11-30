@@ -39,17 +39,17 @@ function UserAlbums() {
 
     return (
         <div>
-            <h2 className="title">User Albums</h2>
+            <h2 className="title">User Todos</h2>
             <ListGroup>
                 {userTodos.map((todo) => (
                     <ListGroupItem key={todo.id} className="list-item">
                         <h3>{todo.title}</h3>{
                             todo.completed ? (
-                                <p>
+                                <p style={{ margin: "0px" }}>
                                     Completed:  <BiCheck className="text-success fs-1" />
                                 </p>
                             ) : (
-                                <p>
+                                <p style={{ margin: "0px" }}>
                                     Incomplete: <BiX className="text-danger fs-1" />
                                 </p>
                             )

@@ -15,11 +15,11 @@ function UsersPage() {
 
     return (
         <Container>
-            <Row>
+            <Row className="my-5">
                 {users.length > 0 ? (
                     users.map(({ id, name }) => (
-                        <Col key={id} md={4} className="mb-4" >
-                            <Card>
+                        <Col key={id} md={4} className="mb-4 col-lg-3 col-sm-6 usersCol" >
+                            <Card className="card">
                                 <Card.Body>
                                     <Card.Title>{name}</Card.Title>
                                     <Nav.Link to={`/users/${id}`} as={NavLink}>Details <FaArrowRight /></Nav.Link>

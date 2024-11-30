@@ -15,7 +15,7 @@ const getUserAlbums = async (userId: string) => {
         const response = await axios.get(
             `https://jsonplaceholder.typicode.com/users/${userId}/albums`
         );
-        const posts: UserAlbumProps[] = response.data; // Direkt response.data kullanabilirsiniz
+        const posts: UserAlbumProps[] = response.data;
         return posts;
     } catch (error) {
         console.error("Error fetching posts:", error);
