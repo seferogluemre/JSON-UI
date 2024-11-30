@@ -16,12 +16,12 @@ export const fetchAlbumInfo = async ({ params }: LoaderFunctionArgs) => {
     );
     const photos = response.data;
     return photos;
-
 };
 
 function AlbumDetail() {
 
     const photos = useLoaderData() as AlbumProps[];
+
     const [toastShow, setToastShow] = useState(false);
     const [toastMessage, setToastMessage] = useState("");
     const { addFavorite, removeFavorite, favorites }: any = useStore();
@@ -40,6 +40,7 @@ function AlbumDetail() {
     return <>
         <Container>
             <Row>
+
                 {photos?.map((photo) => (
                     <Col
                         sm={6}
