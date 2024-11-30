@@ -13,6 +13,11 @@ const routes = [
                 index: true,
                 element: <HomePage />,
             },
+            {
+                path: "users",
+                element: <UsersPage />,
+                loader: usersLoader,
+            }
 
         ],
     }
