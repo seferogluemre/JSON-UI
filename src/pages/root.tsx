@@ -1,9 +1,10 @@
 import { Outlet } from "react-router-dom";
+import { NavbarComp } from "../components/layout/Navbar";
 
 function RootLayout() {
     return (
         <>
-            <NavbarBs />
+            <NavbarComp />
             <Outlet />
         </>
     );
