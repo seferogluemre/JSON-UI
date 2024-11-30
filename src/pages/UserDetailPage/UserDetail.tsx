@@ -2,6 +2,7 @@ import axios from "axios"
 import { LoaderFunctionArgs, useLoaderData } from "react-router-dom"
 import { User } from "../../components/interface/User";
 import { Container, Row } from "react-bootstrap";
+import UserTab from "../../components/layout/UserTab";
 
 export const userLoader = async ({ params }: LoaderFunctionArgs) => {
     try {
@@ -26,9 +27,15 @@ function UserDetailPage() {
                     <h4>{user.username}</h4>
                     <h4>{user.email}</h4>
                 </div>
+                <UserTab
+                    {...{
+                        postLink: `/users/${user.id}/posts`,
+                        albumLink: `/users/${user.id}/albums`,
+                        todoLink: `/users/${user.id}/todos`,
+                    }}
+                />
             </Row>
         </Container>
     </>
-
 }
 export default UserDetailPage;

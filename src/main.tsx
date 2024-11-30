@@ -6,7 +6,6 @@ import { HomePage, ErrorPage, UserPage, RootPage, UserDetailPage } from './pages
 import { usersLoader } from './pages/UsersPage/UsersPage';
 import { userLoader } from './pages/UserDetailPage/UserDetail';
 
-
 const routes = createBrowserRouter([
   {
     path: "/",
