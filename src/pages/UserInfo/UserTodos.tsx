@@ -3,14 +3,7 @@ import { useEffect, useState } from "react";
 import { ListGroup, ListGroupItem } from "react-bootstrap";
 import { BiCheck, BiX } from "react-icons/bi";
 import { useParams } from "react-router-dom";
-
-interface UserTodoProps {
-    userId: number;
-    id: number;
-    title: string;
-    completed: boolean;
-}
-
+import { UserTodoProps } from "../../components/interface/UserTodoProps";
 
 
 function UserAlbums() {
@@ -58,7 +51,7 @@ function UserAlbums() {
             </div>
         );
     }
-
+    0
     return (
         <div>
             <h2 className="title">User Todos</h2>

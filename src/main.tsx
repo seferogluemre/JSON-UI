@@ -2,9 +2,10 @@ import { createRoot } from 'react-dom/client'
 import './App.scss'
 import "bootstrap/dist/css/bootstrap.min.css";
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { HomePage, ErrorPage, UserPage, RootPage, UserDetailPage } from './pages/index'
+import { HomePage, ErrorPage, UserPage, RootPage, UserDetailPage, PostDetailPage } from './pages/index'
 import { usersLoader } from './pages/UsersPage/UsersPage';
 import { userLoader } from './pages/UserDetailPage/UserDetail';
+import { userPostDetailLoader } from './pages/PostDetail/PostDetails';
 
 const routes = createBrowserRouter([
   {
@@ -26,6 +27,15 @@ const routes = createBrowserRouter([
         element: <UserDetailPage />,
         loader: userLoader,
       },
+      {
+        path: "users/:userId/posts/:postId",
+        element: <PostDetailPage />,
+        loader: userPostDetailLoader,
+      },
+
+
+
+
     ],
   },
 ]);

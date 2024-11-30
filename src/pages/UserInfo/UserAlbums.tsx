@@ -2,13 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { ListGroup } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
-
-interface UserAlbumProps {
-    userId: number;
-    id: number;
-    title: string;
-    body: string;
-}
+import { UserAlbumProps } from "../../components/interface/UserAlbumsProps";
 
 function UserAlbums() {
     const [userAlbums, setUserAlbums] = useState<UserAlbumProps[]>([]);

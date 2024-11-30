@@ -1,6 +1,6 @@
 import axios from "axios"
 import { LoaderFunctionArgs, useLoaderData } from "react-router-dom"
-import { User } from "../../components/interface/User";
+import { User } from "../../components/interface/UserProps";
 import { Container, Row } from "react-bootstrap";
 import UserTab from "../../components/layout/UserTab";
 

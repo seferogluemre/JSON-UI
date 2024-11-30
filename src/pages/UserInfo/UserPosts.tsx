@@ -1,14 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { ListGroup } from "react-bootstrap";
-import { useParams } from "react-router-dom";
-
-interface UserPostsParams {
-    userId: number;
-    id: number;
-    title: string;
-}
-
+import { Link, useParams } from "react-router-dom";
+import { UserPostsParams } from "../../components/interface/UserPostsProps";
 
 
 function UserPosts() {
@@ -59,9 +53,9 @@ function UserPosts() {
             <h2 className="title">User Posts</h2>
             <ListGroup>
                 {userPosts.map((post) => (
-                    <ListGroup.Item key={post.id} className="list-item">
+                    <Link to={`/users/${userId}/posts/${post.id}`} key={post.id} className="list-item">
                         <h3>{post.title}</h3>
-                    </ListGroup.Item>
+                    </Link>
                 ))}
             </ListGroup>
         </div>
