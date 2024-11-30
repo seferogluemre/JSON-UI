@@ -54,7 +54,7 @@ function UserAlbums() {
             <h2 className="title">User Albums</h2>
             <ListGroup>
                 {userAlbums.map(({ id, title }) => (
-                    <NavLink to={""} key={id} className="list-item">
+                    <NavLink to={"/users/:userId/albums/:albumId"} key={id} className="list-item">
                         <h3>{title}</h3>
                     </NavLink>
                 ))}

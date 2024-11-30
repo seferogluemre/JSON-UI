@@ -6,6 +6,7 @@ import { HomePage, ErrorPage, UserPage, RootPage, UserDetailPage, PostDetailPage
 import { usersLoader } from './pages/UsersPage/UsersPage';
 import { userLoader } from './pages/UserDetailPage/UserDetail';
 import { postLoader } from './pages/PostDetail/PostDetails';
+import AlbumDetail, { fetchAlbumInfo } from './pages/AlbumDetail/AlbumDetail';
 
 const routes = createBrowserRouter([
   {
@@ -31,6 +32,11 @@ const routes = createBrowserRouter([
         path: "users/:userId/posts/:postId",
         element: <PostDetailPage />,
         loader: postLoader,
+      },
+      {
+        path: "users/:userId/albums/:albumId",
+        loader: fetchAlbumInfo,
+        element: <AlbumDetail />,
       },
 
 
