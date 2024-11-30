@@ -1,5 +1,6 @@
 import { Tab, Tabs } from "react-bootstrap";
 import UserPosts from '../../pages/UserInfo/UserPosts'
+import UserAlbums from "../../pages/UserInfo/UserAlbums";
 
 
 interface UserTabProps {
@@ -19,7 +20,7 @@ function UserTab({ postLink, albumLink, todoLink }: UserTabProps) {
                 <UserPosts />
             </Tab>
             <Tab eventKey={albumLink} title="album">
-                {/* <UserAlbums /> */}
+                <UserAlbums />
             </Tab>
             <Tab eventKey={todoLink} title="todo">
                 {/* <UserTodos /> */}

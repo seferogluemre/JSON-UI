@@ -37,7 +37,7 @@ function UserPosts() {
 
     return (
         <div>
-            <h3>User Posts</h3>
+            <h2 className="title">User Posts</h2>
             <ListGroup>
                 {userPosts.map((post) => (
                     <ListGroup.Item key={post.id} className="list-item">

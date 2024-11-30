@@ -11,9 +11,17 @@
 }
 .list-item{
     border: none !important;
-    box-shadow: 0 4px 6px gray;
+    box-shadow: 0 2px 4px gray;
     margin: 10px 10px;
-    border-radius: 15px;
-    width: 500px;
+    border-radius: 8px;
+    width: 700px;
     cursor: pointer;
+    color: black !important;
+    text-decoration: none;
+    padding: 10px;
+}
+.title{
+    color: red;
+    text-align: center;
+    font-size: 35px !important;
 }
