@@ -1,4 +1,4 @@
-This project is built using React and TypeScript, leveraging the JSON Placeholder API to create a user management system.
+This project is built using REACT and TYPESCRIPT, leveraging the JSON Placeholder API to create a USER MANAGEMENT PANEL.
 
 Users Page: Displays a list of all users with an option to view detailed profiles.
 User Details Page: Shows detailed information about a selected user, including their posts, albums, and todos.
