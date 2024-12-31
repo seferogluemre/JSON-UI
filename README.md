@@ -10,6 +10,6 @@ React: Component-based modern UI development.
 TypeScript: Static typing for reliable and maintainable code.
 React Router DOM: For seamless page transitions and routing.
 Zustand: Lightweight and straightforward global state management.
-React Bootstrap: Pre-styled components for responsive designs.
+React MdBootstrap: Pre-styled components for responsive designs.
 React Icons: Elegant and customizable icons for the UI.
 Sass: A CSS preprocessor for writing clean and organized styles.
