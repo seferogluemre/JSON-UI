@@ -7,7 +7,7 @@ The application offers a simple, user-friendly interface for managing and explor
 
 Technologies Used
 
-React: Component-based modern UI development.
+React: Component-based modern UI development
 TypeScript: Static typing for reliable and maintainable code.
 React Router DOM: For seamless page transitions and routing.
 Zustand: Lightweight and straightforward global state management.
